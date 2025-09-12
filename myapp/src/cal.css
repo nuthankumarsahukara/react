@@ -1,0 +1,45 @@
+*{
+    font-family: comic sans MS;
+}
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    flex-direction: column;
+}
+
+.output{
+    outline: none;
+    border: none;
+    width: 320px;
+    height:80px;
+    font-size:40px;
+    padding: 2px 10px;
+    background-color:grey;
+    color:white;
+    text-align: right;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+button{
+    width: 82px;
+    height: 90px;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 25px 5px 25px 5px;
+    margin:2px;
+}
+.operator{
+    background-color: orange;
+}
+.digit:hover{
+    background-color: azure;
+}
+.fun-key{
+    background-color: beige;
+}
+.operator:hover{
+    background-color: rgb(185, 140, 56);
+}

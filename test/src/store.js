@@ -1,0 +1,46 @@
+import {createStore,combineReducers} from 'redux';
+const initialState={
+    balance :0,
+    fullName  :"Guest",
+    phoneNumber :'xxxxxxxxxx'
+}
+
+function accountReducer(state=initialState,action){
+    switch(action.type){
+        case "account/deposit":
+            return{...state,balance:state.balance+action.payload};
+        case "account/withdraw":
+            return{...state,balance:state.balance-action.payload};
+        case "updateName":
+            return{...state,fullName:action.payload};
+        case "updatePhone":
+            return{...state,phoneNumber:action.payload};
+        case "reset" :
+            return initialState;
+        default :
+            return state;
+    }
+}
+
+function transactionReducer(state=[],action){
+    switch(action.type){
+        case "Add" :
+            return[...state,{
+                id:action.payload.id,
+                amount:action.payload.amount,
+                type:action.payload.type,
+                date:action.payload.date}];
+        default :
+            return state;
+    }
+}
+
+const rootReducer=combineReducers(
+    { 
+        account : accountReducer,
+        transaction:transactionReducer
+    });
+
+const Store=createStore(rootReducer);
+
+export default Store;
