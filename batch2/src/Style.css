@@ -1,0 +1,23 @@
+body{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items:center;
+}
+h3{
+    color: red;
+    text-decoration: line-through;
+    text-decoration-color: azure;
+}
+
+.heading{
+    color: blue;
+    text-align: center;
+    text-decoration: double;
+    text-shadow: 5px 5px 5px black;
+}
+
+.para{
+    color: aqua;
+    text-align: center;
+}
