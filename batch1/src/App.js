@@ -1,32 +1,32 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useReducer } from "react";
 
 function App(){
-  
-  let[output,setOutput]=useState([]);
-
-  useEffect( () =>{
-    async function getProducts() {
-        let res=await axios.get('https://fakestoreapi.com/products');
-        setOutput(res.data);
+    function count(state,action){
+        
+        switch(action.type){
+        case 'inc' :
+            return state+1;
+        case 'dec' :
+            return state-1;
+        case 'reset' :
+            return 0;
+        default :
+            return state;
+        }
     }
-    getProducts();  
-  },[]);
-  
-  return(
-    <>
-        <h1>By Using Axios Method</h1>
-        <ul>
-          {output.map((p)=>(
-            <>
-              <li key={p.id}>Name :{p.title}</li>
-              <li>Price :${p.price}</li>
-              <hr/>
-            </>
-          ))}
-        </ul>
-    </>
-  )
+    let[counter,dispatch]=useReducer(count,0);
+    return(
+        <>
+            <h1>UseReducer Example</h1>
+            <button onClick={()=>dispatch({type:'dec'})}>Minus</button>
+            &nbsp;&nbsp;&nbsp;
+            <b>Counter : {counter}</b>
+            &nbsp;&nbsp;&nbsp;
+            <button onClick={()=>dispatch({type:'inc'})}>Plus</button>
+            <button onClick={()=>dispatch({type: 'reset'})}>Reset</button>
+            <button onClick={()=>dispatch({type: 'stop'})}>Stop</button>
+        </>
+    )
 }
 
 export default App;

@@ -1,18 +1,23 @@
-.nav{
-    height :auto;
-    width:100%;
-    background-color: aqua;
+.model-overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 
-.nav a{
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    margin: 10px;
+.content{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
-a:hover{
-    color: blue;
+.app{
+    position: relative;
 }

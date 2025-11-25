@@ -1,13 +1,16 @@
 import React from "react";
 
-function User(){
-    return(
-        <React.Fragment>
-            <h1>Welcome to React JS</h1>
-            <h1>Good Morning</h1>
-            <h1>Have a nice day</h1>
-        </React.Fragment>
-    )
+class User extends React.Component{
+    render(){
+            let {name,age,place}=this.props
+        return(
+            <>
+                <h1>Name : {name}</h1>
+                <h1>Age  : {age}</h1>
+                <h1>Place : {place}</h1>
+            </>
+        )       
+    }
 }
 
 export default User;

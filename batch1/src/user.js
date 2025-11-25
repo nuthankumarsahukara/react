@@ -1,17 +1,9 @@
-import React from "react";
-
-class User extends React.Component{
-
-    handleClick= () =>{
-        this.props.data("Hello This is Message from Child Component");
-    }
-    render(){
+function User(props){
     return(
         <>
-            <button onClick={this.handleClick}>Send Data to Parent Component</button>
+            <h1>Name : {props.name}</h1>
         </>
     )
-}
 }
 
 export default User;
